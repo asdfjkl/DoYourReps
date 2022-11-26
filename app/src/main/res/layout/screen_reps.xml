@@ -48,7 +48,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="+"
-        app:layout_constraintStart_toEndOf="@id/textview_reps"
+        app:layout_constraintStart_toEndOf="@id/button_done"
         app:layout_constraintTop_toBottomOf="@id/textview_reps" />
 
     <Button
@@ -58,7 +58,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@id/textview_reps"
+        app:layout_constraintEnd_toStartOf="@id/button_done"
         app:layout_constraintTop_toBottomOf="@id/textview_reps" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
