@@ -4,8 +4,13 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.text.InputType;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -135,12 +140,27 @@ public class RepActivity extends AppCompatActivity {
 
     private void showRestDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Rest at least one minute.");
+        builder.setTitle("Rest 90s, more if needed");
+        final TextView tvCountdown = new TextView(this);
+        tvCountdown.setGravity(Gravity.CENTER);
+        tvCountdown.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        builder.setView(tvCountdown);
         builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
         });
+        new CountDownTimer(90000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                tvCountdown.setText("Time Left: " + millisUntilFinished / 1000+"s");
+                // logic to set the EditText could go here
+            }
+            public void onFinish() {
+                tvCountdown.setText("Time Left: 0s");
+            }
+        }.start();
+
         builder.show();
     }
 
