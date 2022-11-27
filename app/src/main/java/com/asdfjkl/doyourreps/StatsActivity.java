@@ -23,8 +23,16 @@ public class StatsActivity extends AppCompatActivity {
         TextView tvOverallCount = findViewById(R.id.text_view_overall_count);
         tvOverallCount.setText(String.valueOf(getIntent().getIntExtra("overallCount", 0)));
 
+        TextView tvYear = findViewById(R.id.text_view_year_text);
+        tvYear.setText("THIS YEAR ("+getIntent().getStringExtra("year")+")");
+
         TextView tvYearCount = findViewById(R.id.text_view_year_count);
         tvYearCount.setText(String.valueOf(getIntent().getIntExtra("yearCount", 0)));
+
+        TextView tvMonth = findViewById(R.id.text_view_month_text);
+        String monthNum = getIntent().getStringExtra("month");
+        String monthName = Excercise.getMonthName(monthNum);
+        tvMonth.setText("THIS MONTH ("+monthName+")");
 
         TextView tvMontCount = findViewById(R.id.text_view_month_count);
         tvMontCount.setText(String.valueOf(getIntent().getIntExtra("monthCount", 0)));

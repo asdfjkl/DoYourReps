@@ -31,6 +31,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
         // set current excercise to the beginning of the list
         currentExcercise = excercises.get(0);
 
+        /*
+        currentExcercise.reset();
+        currentExcercise.currentLevel = 8;
+        for(int i=0;i<10;i++) {
+            System.out.println("week 1: "+ currentExcercise.getCurrentWorkoutSteps());
+            currentExcercise.weekStep++;
+            System.out.println("week 2: "+ currentExcercise.getCurrentWorkoutSteps());
+            currentExcercise.weekStep++;
+            System.out.println("week 3: "+ currentExcercise.getCurrentWorkoutSteps());
+            currentExcercise.weekStep = 0;
+            currentExcercise.currentLevel = (int) Math.round(currentExcercise.currentLevel * 1.15);
+        } */
+
         setContentView(R.layout.screen_main);
         // set up spinner
         Spinner excerciseSpinner = (Spinner) findViewById(R.id.spinner);
@@ -114,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE) {
             if(resultCode == Activity.RESULT_OK){
                 Boolean success = data.getBooleanExtra("success", false);
+                //System.out.println("success received: " + success);
                 int repsDone = data.getIntExtra("repsDone", 0);
                 if(currentExcercise.currentLevel == 0) {
                     // this was the initial test
@@ -275,6 +290,8 @@ public class MainActivity extends AppCompatActivity {
                     statsActivityIntent.putExtra("overallCount", currentExcercise.overallCount);
                     statsActivityIntent.putExtra("monthCount", currentExcercise.monthCount);
                     statsActivityIntent.putExtra("yearCount", currentExcercise.yearCount);
+                    statsActivityIntent.putExtra("month", currentExcercise.thisMonth);
+                    statsActivityIntent.putExtra("year", currentExcercise.thisYear);
                     startActivity(statsActivityIntent);
                 }
             });

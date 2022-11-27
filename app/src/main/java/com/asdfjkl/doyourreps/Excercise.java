@@ -70,12 +70,13 @@ public class Excercise {
 
     public ArrayList<Integer> getCurrentWorkoutSteps() {
 
-        int avg_per_set_one = (int) Math.round(currentLevel * 0.7);
+        int avg_per_set_one = (int) Math.round(currentLevel * 0.65);
         int overall_one = avg_per_set_one * 5;
-        int overall_two = (int) Math.round((avg_per_set_one * 5.0) * 1.05);
+        int overall_two = (int) Math.round((avg_per_set_one * 5.0) * 1.10);
         int avg_per_set_two = (int) Math.round(overall_two / 5.0);
-        int overall_three = (int) Math.round((avg_per_set_one * 5) * 1.10);
+        int overall_three = (int) Math.round((avg_per_set_one * 5) * 1.20);
         int avg_per_set_three = (int) Math.round(overall_three / 5);
+        //System.out.println("1,2,3 avg: "+avg_per_set_one + ", "+avg_per_set_two + ", "+avg_per_set_three);
 
         ArrayList<Integer> set1 = new ArrayList<>();
         ArrayList<Integer> set2 = new ArrayList<>();
@@ -101,19 +102,19 @@ public class Excercise {
         set2.add((int) Math.round(avg_per_set_two * 1.05));
         set3.add((int) Math.round(avg_per_set_three * 1.05));
 
-        if(weekStep == 1) {
+        if(weekStep == 0) {
             return set1;
         }
 
-        if(weekStep == 2) {
+        if(weekStep == 1) {
             return set2;
         }
 
-        if(weekStep == 3) {
+        if(weekStep == 2) {
             return set3;
         }
-
-        return set1;
+        ArrayList<Integer> tmp = new ArrayList<>();
+        return tmp;
     }
 
     public static String getCurrentMonth() {
@@ -126,6 +127,46 @@ public class Excercise {
         Date date = new Date();
         String year = (String) DateFormat.format("yyyy", date);
         return year;
+    }
+
+    public static String getMonthName(String month) {
+        if(month.equals("01")) {
+            return "JAN";
+        }
+        if(month.equals("02")) {
+            return "FEB";
+        }
+        if(month.equals("03")) {
+            return "MAR";
+        }
+        if(month.equals("04")) {
+            return "APR";
+        }
+        if(month.equals("05")) {
+            return "MAY";
+        }
+        if(month.equals("06")) {
+            return "JUN";
+        }
+        if(month.equals("07")) {
+            return "JUL";
+        }
+        if(month.equals("08")) {
+            return "AUG";
+        }
+        if(month.equals("09")) {
+            return "SEP";
+        }
+        if(month.equals("10")) {
+            return "OCT";
+        }
+        if(month.equals("11")) {
+            return "NOV";
+        }
+        if(month.equals("12")) {
+            return "DEC";
+        }
+        return "";
     }
 
 }

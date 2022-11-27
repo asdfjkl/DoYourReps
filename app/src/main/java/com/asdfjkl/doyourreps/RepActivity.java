@@ -109,7 +109,7 @@ public class RepActivity extends AppCompatActivity {
                 if(initialTest) {
                     Intent returnIntent = new Intent();
                     returnIntent.putExtra("success", success);
-                    returnIntent.putExtra("repsDone", repsDoneOverall);
+                    returnIntent.putExtra("repsDone", repsDoneInCurrentRound);
                     setResult(Activity.RESULT_OK,returnIntent);
                     finish();
                 } else {
