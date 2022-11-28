@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 if(currentExcercise.currentLevel == 0) {
                     // this was the initial test
                     currentExcercise.currentLevel = repsDone;
+                    showEncouragementDialog();
                 } else {
                     // otherwise this was a regular excercise
                     if (success) {
@@ -143,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                             currentExcercise.currentLevel = (int) Math.round(currentExcercise.currentLevel * 1.15);
                             currentExcercise.weekStep = 0;
                         }
+                        showEncouragementDialog();
                     }
                     currentExcercise.overallCount += repsDone;
                     String currentYear = Excercise.getCurrentYear();
@@ -295,6 +297,18 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(statsActivityIntent);
                 }
             });
+    }
+
+    private void showEncouragementDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Well done!");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
     }
 
     @Override
