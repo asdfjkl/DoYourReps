@@ -3,7 +3,7 @@
     android:layout_height="fill_parent"
     android:layout_width="fill_parent"
     android:gravity="center"
-    android:textColor="?android:textColorPrimary"
+    android:textColor="?android:textColorPrimaryInverse"
     android:text="Sample Text"
     android:textSize="40sp"
     android:paddingBottom="5dp"

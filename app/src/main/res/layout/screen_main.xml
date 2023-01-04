@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background">
 
     <Spinner
         android:id="@+id/spinner"
@@ -11,12 +12,13 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="40sp"
+        android:popupBackground="@color/purple_700"
         style="@android:style/Widget.Material.Spinner.Underlined"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".25"
+        app:layout_constraintVertical_bias=".20"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
@@ -37,6 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="ADD"
+        android:textSize="20sp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_start" />
@@ -46,6 +50,8 @@
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:text="REMOVE"
+        android:textSize="20sp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="@+id/button_add"
         app:layout_constraintStart_toStartOf="@+id/button_add"
         app:layout_constraintTop_toBottomOf="@+id/button_add" />
@@ -55,6 +61,8 @@
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:text="RESET"
+        android:textSize="20sp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="@+id/button_remove"
         app:layout_constraintStart_toStartOf="@+id/button_remove"
         app:layout_constraintTop_toBottomOf="@+id/button_remove" />
@@ -64,6 +72,8 @@
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:text="STATS"
+        android:textSize="20sp"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="@+id/button_reset"
         app:layout_constraintStart_toStartOf="@+id/button_reset"
         app:layout_constraintTop_toBottomOf="@+id/button_reset" />

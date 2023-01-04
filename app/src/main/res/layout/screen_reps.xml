@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background">
 
     <TextView
         android:id="@+id/textview_set"
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Set 1 of 5"
         android:textSize="30sp"
-        android:textColor="?android:textColorPrimary"
+        android:textColor="?android:textColorPrimaryInverse"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="11"
-        android:textColor="?android:textColorPrimary"
+        android:textColor="?android:textColorPrimaryInverse"
         android:textSize="100sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="DONE"
+        android:textSize="20sp"
+        android:padding="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_reps" />
@@ -48,6 +51,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="+"
+        android:textSize="20sp"
+        android:padding="15dp"
         app:layout_constraintStart_toEndOf="@id/button_done"
         app:layout_constraintTop_toBottomOf="@id/textview_reps" />
 
@@ -58,6 +63,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:text="-"
+        android:textSize="20sp"
+        android:padding="15dp"
         app:layout_constraintEnd_toStartOf="@id/button_done"
         app:layout_constraintTop_toBottomOf="@id/textview_reps" />
 
